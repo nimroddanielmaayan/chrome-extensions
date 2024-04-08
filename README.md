@@ -1,1 +1,1 @@
-React & TypeScript Chrome Extension Development.
+# React & TypeScript Chrome Extension Development
