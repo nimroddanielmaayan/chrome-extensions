@@ -5,7 +5,7 @@ const saveBtn = document.getElementById('save-btn');
 
 saveBtn.addEventListener('click', () => {
   userName = nameInput.value;
-  console.log(nameInput.value);
+  nameInput.value = '';
   chrome.storage.sync.set(
     {
       userName,
@@ -17,6 +17,6 @@ saveBtn.addEventListener('click', () => {
 });
 
 chrome.storage.sync.get(['userName'], (res) => {
-  nameInput.value = res.userName;
+  nameInput.value = res.userName ?? '-';
   console.log(res);
 });

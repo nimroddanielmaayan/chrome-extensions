@@ -32,4 +32,26 @@
   `chrome.storage.sync.get`, and not the "unsyched" version of these functions,
   in order to persist data across devices.
 
--
+- The only way to wipe clean the extension's memory (for development purposes),
+  is by removing and re-adding the extension
+
+### Background Scripts and Service Workers
+
+- The thing about our JS scripts so far (`options.js` and `popup.js`), is that
+  they run only when the extension is open\running. There are things that should
+  work in the background all the time, like timers. For that, we have BG scripts
+  which always run while the extension is installed
+
+- A BG script is esentially a service worker, which scan be idle ("asleep") or
+  active. It has it's own `this`\global object, which is called
+  "serviceWorkerGlobalScope". It's different from the browser's "window" global
+  object
+
+- Service workers will automatically "idle out" after a few seconds if they
+  don't get any calls to do work
+
+- The chrome.alarms API allows us to override this "idle out" behavior. It needs
+  to be added as a permission in `manifest.json`
+
+- We can create one default alarm or several named alarms. Each alarm will fire
+  events that we can listen for
