@@ -55,3 +55,13 @@
 
 - We can create one default alarm or several named alarms. Each alarm will fire
   events that we can listen for
+
+### Crome Notifications API
+
+- The way notifications are done since mavifest version 3 is using
+  ServiceWorkerRegistration.showNotification. We need to add "notifications" to
+  `manifest.json` in order to use it
+
+- If we'll look inside the service worker JS script's global object, we'll find
+  ServiceWorkerRegistration inside it. So the syntax is going to be
+  `this.registration.everythingElse`

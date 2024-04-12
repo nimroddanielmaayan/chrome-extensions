@@ -21,5 +21,11 @@ chrome.alarms.onAlarm.addListener((alarm) => {
     chrome.action.setBadgeText({
       text: `${time2 + 1}`,
     });
+    if (time2 % 1000 == 0) {
+      this.registration.showNotification('Chrome Timer Extension', {
+        body: '10 seconds have passed',
+        icon: 'icon.png',
+      });
+    }
   });
 });
