@@ -1,8 +1,12 @@
 # React & TypeScript Chrome Extension Development Course
 
-- Link: https://www.udemy.com/course/chrome-extension
+- Course link: https://www.udemy.com/course/chrome-extension
 
-## Chrome Extension Basics
+## Section 1: (no notes)
+
+## Section 2: Chrome Extension Basics
+
+### General
 
 - Every Chrome extention needs to have a `manifest.json` file
 
@@ -65,3 +69,19 @@
 - If we'll look inside the service worker JS script's global object, we'll find
   ServiceWorkerRegistration inside it. So the syntax is going to be
   `this.registration.everythingElse`
+
+## Section 3: (course section, skipped for now)
+
+## Section 4: Data Fetching and More Chrome APIs
+
+### Chrome Runtime API
+
+- The Chrome Runtime API can return a lot of information about the extension,
+  and also allows us to listen to important events
+
+### Chrome Context Menu API
+
+- This allows us to alter the context menus that the user gets when
+  right-clicking in Chrome. It's a very powerful feature!
+
+-
