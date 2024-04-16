@@ -24,6 +24,11 @@
 - It's possible to interact with an extension's HTML using the Chrome Dev Tools,
   just like when interacting with any regular web page.
 
+- We have 3 main environments\JS scripts when developing a Chrome extension:
+  - Popup
+  - Options page
+  - Service Worker
+
 ### Options Page
 
 - The `manifest.json` has to point to the options page's HTML file
@@ -70,18 +75,32 @@
   ServiceWorkerRegistration inside it. So the syntax is going to be
   `this.registration.everythingElse`
 
-## Section 3: (course section, skipped for now)
+## Section 3: (project section, skipped for now)
 
 ## Section 4: Data Fetching and More Chrome APIs
 
 ### Chrome Runtime API
 
-- The Chrome Runtime API can return a lot of information about the extension,
-  and also allows us to listen to important events
+- The Chrome Runtime API can return a lot of information about the extension
+  (like getManifest), and also allows us to listen to important events (like
+  onStartup)
+
+- The onInstalled method is very useful - for example, we can use it to set
+  default values to all variables when the extenstion is installed
 
 ### Chrome Context Menu API
 
 - This allows us to alter the context menus that the user gets when
   right-clicking in Chrome. It's a very powerful feature!
 
--
+- We can use the returned context menu `event` to get access to important things
+  in an interaction event, like the text that the user highlighted before
+  clicking
+
+- It's possible to create sub-menus for context menus
+
+### Chrome Search API
+
+- This API allows us to create a custom search
+
+- The `manifest.json` permissions it requires are "search" and "tabs"
