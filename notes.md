@@ -103,4 +103,22 @@
 
 - This API allows us to create a custom search
 
-- The `manifest.json` permissions it requires are "search" and "tabs"
+- The `manifest.json` permission it requires is "search" (and usually also
+  "tabs", because they are needed for displaying the search)
+
+- Allows us to create custom web searches
+
+### Chrome Tabs API
+
+- The `manifest.json` permission it requires is "tabs"
+
+- This API allows us to do things with the currently active tabs, like
+  requesting information about them (as "tab objects") or creating new, custom
+  tabs
+
+- Some to request information, we have the method `chrome.tabs.query` and for
+  creating new tabs we have the method `chrome.tabs.create`
+
+### Content Scripts
+
+-
