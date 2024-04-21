@@ -121,4 +121,14 @@
 
 ### Content Scripts
 
+- Content scripts are yet another environment that exists in Chrome extensions.
+  It's an "isolated world" that runs independently from a wep page
+
+- Content scripts are our main way of interacting with web pages. They can apply
+  to all web pages or only to specific ones
+
+- Content scripts can manipulate web pages, either statically, dynamically or
+  programatically. Examples of things they can do: Change text, change the
+  design, add HTML elements, etc.
+
 -
