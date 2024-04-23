@@ -37,9 +37,13 @@
 
 ### Data and the Chrome Storage API
 
+- Chrome has a built-in data storage system, which can either be synched or
+  unsynched
+
 - It's usually best to use `chrome.storage.sync.set` and
   `chrome.storage.sync.get`, and not the "unsyched" version of these functions,
-  in order to persist data across devices.
+  in order to persist data across devices. Though sometimes it might make more
+  sense not to synch, depending on the use case
 
 - The only way to wipe clean the extension's memory (for development purposes),
   is by removing and re-adding the extension
@@ -131,4 +135,18 @@
   programatically. Examples of things they can do: Change text, change the
   design, add HTML elements, etc.
 
--
+### Message Passing (between scripts)
+
+- It's neccessary for all our scripts to "talk" to each other. For example, when
+  the content script changes the text of a web page we might want the background
+  script to know that, and to store the updated text for it's own uses
+
+- For this we have the sendMessage API
+
+- These messages can then be listened to in any script, using the addListener
+  method
+
+- It's possible to only listen to certain messages and not to all of them, if
+  that makes more sense
+
+### Data Fetching and HTTP Requests
