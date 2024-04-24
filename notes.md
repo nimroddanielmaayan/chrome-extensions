@@ -90,7 +90,10 @@
   onStartup)
 
 - The onInstalled method is very useful - for example, we can use it to set
-  default values to all variables when the extenstion is installed
+  default values to all variables when the extenstion is installed. It's
+  actually very much recommended to set default values for all of the data that
+  the extension might need using onInstalled, in order to avoid bugs and errors
+  that may happen due to crucial data not being available at all
 
 ### Chrome Context Menu API
 
@@ -150,3 +153,30 @@
   that makes more sense
 
 ### Data Fetching and HTTP Requests
+
+- HTTP requests like `GET` can be used to get data from an API. one way of doing
+  this is using the `fetch()` method. We will usually combine such a `GET`
+  request with an async function in order to store the data locally inside the
+  Chrome storage once it arrives from the API, before actually using it in the
+  extension
+
+- In many cases, one JS script will requst the data from an API and another JS
+  script will use it
+
+### Text to Speech API
+
+- The chrome.tts method is a native and simple text-to-speech method that
+  enables chrome to read out any text
+
+- It's possible to control some TTS parameters like the rate of speech, the
+  language, etc
+
+## Section 5: TS, React and Webpack
+
+### General
+
+- It's usually recommended to develop Chrome extensions using React and TS,
+  since they are very well established in the existing Chrome extension
+  ecosystem
+
+- As for Webpack...
