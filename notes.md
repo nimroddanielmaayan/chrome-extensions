@@ -25,9 +25,14 @@
   just like when interacting with any regular web page.
 
 - We have 3 main environments\JS scripts when developing a Chrome extension:
+
   - Popup
   - Options page
   - Service Worker
+
+- Note: When checking errors, sometimes we need to click "clear all" in order to
+  remove the errors from the console. Otherwise they will stay there even after
+  they are fixed
 
 ### Options Page
 
@@ -179,4 +184,89 @@
   since they are very well established in the existing Chrome extension
   ecosystem
 
-- As for Webpack...
+- The most recommended build tool for Chrome extensions is Webpack. We need it
+  in order to turn a complex development environment into simpler, static
+  production\build code. This is especially true if we're using React and
+  TypeScript
+
+- The syntax of the webpack.config.js file is "standard" JS syntax
+
+- The course shows a "basic" possible configuration for Webpack (on this
+  section - section 5). I can use it for my first extension projects, and I can
+  get deeper into Webpack configurations later if I have to
+
+- It's neccesary to use a build tool like Webpack for Chrome plugins because
+  they can't directly "understand" React or TS, only regular JS. So compiling to
+  JS is neccessary (just like when using React and TS in any other type of
+  project)
+
+- Webpack can be set to "development mode", in which it will preform hot reloads
+  and update the build folder whenever any change is made to the source code
+
+### Webpack Plugins
+
+- Webpack plugins do the things that modules can't do
+
+- One plugin that we need is CopyPlugin, for copying the `manifest.json` into
+  the build folder
+
+- Another useful plugin is HtmlPlugin which instructs Webpack to create
+  different HTML output files as `chunks` (which is a Weback concept)
+
+### Webpack CSS Loaders
+
+- I can use the basic CSS loaders configuration from this course in my first
+  projects
+
+- Note: It's not neccessary to write a utility function like getHtmlPlugins(),
+  it's just fine to use regular class
+
+- For CSS, Webpack needs the plugins StyleLoader and CssLoader
+
+- Note: Webpack bundles the CSS files from the source code directly into the
+  final JS files, not into new CSS files. Maybe the final code is more efficient
+  this way
+
+### Types Definition Libraries
+
+- To use TS for Chrome development we need a types library that has types for
+  chrome code. One such library is DefinitelyTyped, but there are others as well
+
+- TS can help us catch errors on time, get autocomplete, etc
+
+### Webpack Production Mode
+
+- When Webpack is in production mode, it won't only bundle the code but also
+  minify and treeshake it. When actually publishing extensions we obviously need
+  to optimize their size first
+
+- All the other definitions remain the same between modes
+
+- It's ok to leave this phase for the end of an extension project. All the
+  development and testing can be done in development mode
+
+- To use production mode, instead of one Webpack definitions file named
+  `webpack.config.js` we'll need several things:
+
+  - `webpack.common.js` (will include all files previously in
+    `webpack.config.js`)
+  - `webpack.dev.js`
+  - `webpack.prod.js`
+  - A module called `webpack-merge`
+  - A build script in `package.json` that calls `webpack.prod.js`
+
+- If we want to "clean" the build folder of all the old files any time we do a
+  new build (by default, existing files will be overwritten but not deleted), we
+  need a library called clean-webpack-plugin
+
+### Webpack Boilerplate
+
+- In this lesson (number 45), there's an explanation to the boilerplate which is
+  included in the course resources. In the Q&A section of this lesson there are
+  a few updates about boilerplates for additional setups including TailwindCSS
+
+- There's also a readme.md file with step-by-step instructions (although they
+  might not be 100% up to date...)
+
+- If the boilerplate won't work when I'll need it, I can try to send a question
+  to the course author
