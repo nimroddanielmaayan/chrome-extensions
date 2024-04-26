@@ -270,3 +270,25 @@
 
 - If the boilerplate won't work when I'll need it, I can try to send a question
   to the course author
+
+## Section 6: (skipped for now)
+
+## Section 7: (skipped for now)
+
+## Section 8: Chrome Web Store Publishing
+
+### General
+
+- It's recommended to use my "development" account for registering to the Chrome
+  Web Store as a developer, not my personal or business accounts
+
+- It's important for anyone who has anything to do with developing Chrome
+  extensions to know Google's policies concerning guidelines, privacy, quality
+  and everything else
+
+- According to Google's guidelines every extention should have `one` single,
+  clear purpose. If someone wants to develop several different functionalities,
+  he should develop several different extensions
+
+- The submission process requires complying with Google's requirements and
+  submitting all of the information that they want
