@@ -292,3 +292,5 @@
 
 - The submission process requires complying with Google's requirements and
   submitting all of the information that they want
+
+- Extension analytics:
