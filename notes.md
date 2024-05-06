@@ -18,21 +18,22 @@
 - In order to develop and test extensions, we can use the `development mode` in
   chrome://extensions
 
-- It's only neccessary to reload our extension if we changed the `manifest.json`
+- It's only necessary to reload our extension if we changed the `manifest.json`
   file, or if we want to do a fresh reload for testing purposes
 
 - It's possible to interact with an extension's HTML using the Chrome Dev Tools,
   just like when interacting with any regular web page.
 
-- We have 3 main environments\JS scripts when developing a Chrome extension:
+- We have 4 main environments\JS scripts when developing a Chrome extension:
 
-  - Popup
-  - Options page
-  - Service Worker
+  - Extension's Popup
+  - Extension's Options Page
+  - Background Script ("background service worker")
+  - Content Script\s ("independent island\s")
 
-- Note: When checking errors, sometimes we need to click "clear all" in order to
-  remove the errors from the console. Otherwise they will stay there even after
-  they are fixed
+- Note: When checking errors in the extension developer console, sometimes we
+  need to click "clear all" in order to remove the errors from the console.
+  Otherwise they will stay there even after they are fixed
 
 ### Options Page
 
@@ -74,7 +75,7 @@
 - We can create one default alarm or several named alarms. Each alarm will fire
   events that we can listen for
 
-### Crome Notifications API
+### Chrome Notifications API
 
 - The way notifications are done since mavifest version 3 is using
   ServiceWorkerRegistration.showNotification. We need to add "notifications" to
@@ -145,7 +146,7 @@
 
 ### Message Passing (between scripts)
 
-- It's neccessary for all our scripts to "talk" to each other. For example, when
+- It's necessary for all our scripts to "talk" to each other. For example, when
   the content script changes the text of a web page we might want the background
   script to know that, and to store the updated text for it's own uses
 
@@ -182,7 +183,7 @@
 
 - It's usually recommended to develop Chrome extensions using React and TS,
   since they are very well established in the existing Chrome extension
-  ecosystem
+  ecosystem. It's much easier and better to use them than to use vanilla JS
 
 - The most recommended build tool for Chrome extensions is Webpack. We need it
   in order to turn a complex development environment into simpler, static
@@ -197,10 +198,10 @@
 
 - It's neccesary to use a build tool like Webpack for Chrome plugins because
   they can't directly "understand" React or TS, only regular JS. So compiling to
-  JS is neccessary (just like when using React and TS in any other type of
+  JS is necessary (just like when using React and TS in any other type of
   project)
 
-- Webpack can be set to "development mode", in which it will preform hot reloads
+- Webpack can be set to "development mode", in which it will perform hot reloads
   and update the build folder whenever any change is made to the source code
 
 ### Webpack Plugins
@@ -211,14 +212,14 @@
   the build folder
 
 - Another useful plugin is HtmlPlugin which instructs Webpack to create
-  different HTML output files as `chunks` (which is a Weback concept)
+  different HTML output files as `chunks` (which is a Webpack concept)
 
 ### Webpack CSS Loaders
 
 - I can use the basic CSS loaders configuration from this course in my first
   projects
 
-- Note: It's not neccessary to write a utility function like getHtmlPlugins(),
+- Note: It's not necessary to write a utility function like getHtmlPlugins(),
   it's just fine to use regular class
 
 - For CSS, Webpack needs the plugins StyleLoader and CssLoader
@@ -271,7 +272,16 @@
 - If the boilerplate won't work when I'll need it, I can try to send a question
   to the course author
 
-## Section 6: (skipped for now)
+## Section 6: Weather Extension Project
+
+### General
+
+- The project is an extension that contacts an API and retrievs weather data. It
+  has several basic features like:
+  - Storing the current city and other favorite cities
+  - Selecting text and retrieving the weather written in that text (or returning
+    an error if invalid)
+  - Injecting a floating frame with the weather into the current webpage
 
 ## Section 7: (skipped for now)
 
@@ -294,3 +304,16 @@
   submitting all of the information that they want
 
 - Extension analytics:
+  - There are a lot of statistics in the default dashboard
+  - It's possible to also add Google Analytics in order to further track the
+    extension
+
+## Section 9: Chrome Extension themes
+
+### General
+
+- Chrome themes are similar to extensions but they are easier and simpler to
+  create. They are basically just made of a `manifest.json` and image files
+
+- There's extensive documentation in Google's developer docs, if I ever need
+  them
