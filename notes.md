@@ -2,7 +2,11 @@
 
 - Course link: https://www.udemy.com/course/chrome-extension
 
-## Section 1: (no notes)
+## Section 1: Intro
+
+### General
+
+- This section is very short and contains basic course info
 
 ## Section 2: Chrome Extension Basics
 
@@ -54,6 +58,9 @@
 - The only way to wipe clean the extension's memory (for development purposes),
   is by removing and re-adding the extension
 
+- It's also possible to use third-party state management libraries in chrome
+  extensions, such as `Redux` or `Zustand`
+
 ### Background Scripts and Service Workers
 
 - The thing about our JS scripts so far (`options.js` and `popup.js`), is that
@@ -85,7 +92,13 @@
   ServiceWorkerRegistration inside it. So the syntax is going to be
   `this.registration.everythingElse`
 
-## Section 3: (project section, skipped for now)
+## Section 3: (project section)
+
+### Genetal
+
+- This project is very simple and it's built with vanilla JS\vanilla CSS.
+  There's no real need to go over it unless I'll want to refresh my memory, in
+  the future
 
 ## Section 4: Data Fetching and More Chrome APIs
 
@@ -287,7 +300,7 @@
 - It has only a front end (no back end), and the FE stack is: React, Material
   UI, TS
 
-## Section 7: (skipped for now)
+## Section 7: Project Section (skipped for now, complete this later)
 
 ## Section 8: Chrome Web Store Publishing
 
@@ -322,7 +335,7 @@
 - There's extensive documentation in Google's developer docs, if I ever need
   them
 
-## Personal Project
+## Section 10 (not part of the course): Personal Project
 
 ### General Idea and Workplan
 
