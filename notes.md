@@ -278,10 +278,14 @@
 
 - The project is an extension that contacts an API and retrievs weather data. It
   has several basic features like:
+
   - Storing the current city and other favorite cities
   - Selecting text and retrieving the weather written in that text (or returning
     an error if invalid)
   - Injecting a floating frame with the weather into the current webpage
+
+- It has only a front end (no back end), and the FE stack is: React, Material
+  UI, TS
 
 ## Section 7: (skipped for now)
 
@@ -317,3 +321,24 @@
 
 - There's extensive documentation in Google's developer docs, if I ever need
   them
+
+## Personal Project
+
+### General Idea and Workplan
+
+- My idea for a practice project is a simple AI extension which sums up any
+  length of text to 20 words or less. It will use ChatGPT's API, or any other AI
+  API that's available and can do the job well
+
+- The texts will be saved to the back end (just for practicing Firebase as a
+  back end for Chrome extensions). Also, there will be an option to log in using
+  Google, and other Firebase features (not really needed, but just for practice)
+
+- Maybe also add a connection to a news API, and enable loading a 20-word
+  summary of a random news story from today
+
+- The extension will be reachable by marking any text and then right clicking
+
+- FE stack: React, Tailwind CSS, TS
+
+- BE stack: Google Firebase
