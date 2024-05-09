@@ -300,6 +300,10 @@
 - It has only a front end (no back end), and the FE stack is: React, Material
   UI, TS
 
+- The project uses basic React, TS and MUI, nothing too complex
+
+- It has a refresher for the Chrome storage API as well (lessons 55 + 56)
+
 ## Section 7: Project Section (skipped for now, complete this later)
 
 ## Section 8: Chrome Web Store Publishing
