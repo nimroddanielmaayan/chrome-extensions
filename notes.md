@@ -302,7 +302,19 @@
 
 - The project uses basic React, TS and MUI, nothing too complex
 
-- It has a refresher for the Chrome storage API as well (lessons 55 + 56)
+### Chrome Storage API
+
+- There's a refresher for the Chrome storage API (lessons 55 + 56)
+
+- In this case, the storage.ts file can be used kind of like a data store in
+  `Redux` or in `Zustand`. It can be made to include all of the definitions for
+  the data structures and all of the functions for manipulating them. All of
+  these can then be exported to anywhere in the application
+
+- The question is, if we decide to use `Redux` or `Zustand` instead of the
+  Chrome storage API, will we be able to persist data across sessions and
+  devices? I'm not sure that we can, so the storage API should probably the
+  default choice for FE data storage. Maybe I'll double-check this issue later
 
 ## Section 7: Project Section (skipped for now, complete this later)
 
