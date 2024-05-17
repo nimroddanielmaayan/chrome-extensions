@@ -316,6 +316,11 @@
   devices? I'm not sure that we can, so the storage API should probably the
   default choice for FE data storage. Maybe I'll double-check this issue later
 
+### Other Features in the Project
+
+- The overlay (injected content) feature: Since the content script is a JS that
+  can be injected into a webpage, we'll use a content script for this feature
+
 ## Section 7: Project Section (skipped for now, complete this later)
 
 ## Section 8: Chrome Web Store Publishing
