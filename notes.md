@@ -145,6 +145,8 @@
 - Some to request information, we have the method `chrome.tabs.query` and for
   creating new tabs we have the method `chrome.tabs.create`
 
+- It's also possible to perform actions on the currently active tab
+
 ### Content Scripts
 
 - Content scripts are yet another environment that exists in Chrome extensions.
@@ -165,11 +167,20 @@
 
 - For this we have the sendMessage API
 
-- These messages can then be listened to in any script, using the addListener
-  method
+- These messages can then be "sent" from any script and "listened" to in any
+  script, using the sendMessage\addListener methods
 
 - It's possible to only listen to certain messages and not to all of them, if
   that makes more sense
+
+- Message passing best practices:
+  - It's recommended to save all the extensions messages in a file named
+    `messages.ts` and to define the messages data inside an `enum` (reminder:
+    that's a data type that exists in TS but not in JS)
+  - It's also good practice to write messages in ALL_CAPS_WITH_UNDERSCORES
+  - Then, we can export and import the messages to wherever they're needed
+  - That's not strictly required (messages can also be regular strings), but it
+    makes it easier to keep track of all the messages in the extension this way
 
 ### Data Fetching and HTTP Requests
 
@@ -320,6 +331,14 @@
 
 - The overlay (injected content) feature: Since the content script is a JS that
   can be injected into a webpage, we'll use a content script for this feature
+
+- In lesson 61, there's an explanation that has to do with `chunks` in WebPack,
+  and how they need to be modified for content scripts
+
+- Message passing (lesson 63): In this lesson, there's an example of why message
+  passing between scripts is important. We want to create a button in the
+  extension popup, which will toggle the overlay (which is shown or removed
+  using a content script)
 
 ## Section 7: Project Section (skipped for now, complete this later)
 
