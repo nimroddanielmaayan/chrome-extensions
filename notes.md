@@ -336,11 +336,30 @@
   and how they need to be modified for content scripts
 
 - Message passing (lesson 63): In this lesson, there's an example of why message
-  passing between scripts is important. We want to create a button in the
+  passing between scripts is so important. We want to create a button in the
   extension popup, which will toggle the overlay (which is shown or removed
-  using a content script)
+  using a content script). So, the popup and the content script need a way to
+  communicate
 
-## Section 7: Project Section (skipped for now, complete this later)
+## Section 7: Adblock Extension Project
+
+### General
+
+- This is a very simplified, basic version of an ad blocker. It has a minimal UI
+
+- The Web Request API was what ad blockers used in manifest version 2. Since
+  version 3, they use the Declarative Net Request API
+
+### The Declarative Net Request API
+
+- This API can measure, modify and even block web requests, in real-time
+
+- The basic technique that ad blockers use is simply to search for URL calls to
+  well-known ad servers, and to "cancel" these calls. There are third-party API
+  servers that serve updated lists of these URLs
+
+- To implement this, we need to create a json file with rules and priorities for
+  the API to follow
 
 ## Section 8: Chrome Web Store Publishing
 
